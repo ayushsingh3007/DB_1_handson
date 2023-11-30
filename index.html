@@ -6,8 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Que-1---</h1>
+    <h1>Que-1---Create a database , give it name like "Human_Resource". Create a collection inside this named "employee"
+    </h1>
+    <pre>ans--
+        use Human_Resource
+        db.createCollection("employee")
+        
+    </pre>
+    <h3>Que-2---Query the collection "employee" and list all the documents
+    </h3>
+  <pre>ans--db.employee.find({})
+</pre>
+<h3>Que-3--Query the collection "employee" and list the employees who are having salary more than 30000
+</h3>
+<pre>ans-db.employee.find({ salary: { $gt: 30000 } })
+</pre>
+    <h3>Que-4--Query the collection "employee" and list the employees who are having experience more than 2 years.
+    </h3>
+    <pre>ans--db.employee.find({ experience: { $gt: 2 } })
+    </pre>
+    <h3>Que--5-Query the collection "employee" and list the employees who are graduated after 2015 and having experience more than 1 year 
+    </h3>
+    <pre>ans-db.employee.find({
+        graduationYear: { $gt: 2015 },
+        experience: { $gt: 1 }
+      })
+      </pre>
+      <h3>Que-6--Query the collection "employee" and update the salary of the employee whose salary is greater than 70000 to 65000.
+    </h3>
+    <pre>ans--db.employee.updateMany(
+        { salary: { $gt: 70000 } },
+        { $set: { salary: 65000 } }
+      )
+      </pre>
 
-    
+      <h3>Que-7--Delete all the documents from "employee" where last company is Y
+      </h3>
+      <pre>ans-db.employee.deleteMany({ lastCompany: 'Y' })
+    </pre>
 </body>
 </html>
